@@ -8,7 +8,8 @@ const EventsList = () => (
       {(value) => {
         return value.events.map(event => (
           <Event
-            
+            key={event.id}
+            event={event}
           />
         ))
       }}
