@@ -14,13 +14,23 @@ class EventsProvider extends Component {
   }
 
   getEvents = async (search) => {
-    const url = `https://www.eventbriteapi.com/v3/events/search/?q=${search.name}&categories=${search.category}&sort_by=${this.sort}&token=${this.token}`
+    console.log(search);
+    const url = `https://www.eventbriteapi.com/v3/events/search/?q=${search.name}&categories=${search.category}&sort_by=${this.sort}&token=${this.tokenDevelopment}`
 
+    const events = await axios(url);
+    console.log(events)
   }
 
   render(){
     return(
-      <div></div>
+      <EventsContext.Provider
+        value={{
+          events: this.state.events,
+          getEvents: this.getEvents
+        }}
+      >
+      {this.props.children}
+      </EventsContext.Provider>
     )
   }
 }
