@@ -20,7 +20,6 @@ class CategoriesProvider extends Component {
     let url = `https://www.eventbriteapi.com/v3/categories/?token=${this.tokenDevelopment}`
 
     let categories = await axios.get(url);
-    console.log(categories.data.categories);
     this.setState({
       categories: categories.data.categories
     })
