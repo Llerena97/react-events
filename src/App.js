@@ -3,6 +3,7 @@ import Header from './components/Header'
 import CategoriesProvider from './context/CategoriesContext'
 import EventsProvider from './context/EventsContext';
 import Form from './components/Form';
+import EventsList from './components/EventsList';
 
 class App extends Component {
   render (){
@@ -12,6 +13,7 @@ class App extends Component {
             <Header/>
             <div className="uk-container">
               <Form/>
+              <EventsList/>
             </div>
           </CategoriesProvider>
         </EventsProvider>

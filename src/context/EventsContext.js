@@ -14,11 +14,11 @@ class EventsProvider extends Component {
   }
 
   getEvents = async (search) => {
-    console.log(search);
     const url = `https://www.eventbriteapi.com/v3/events/search/?q=${search.name}&categories=${search.category}&sort_by=${this.sort}&token=${this.tokenDevelopment}`
-
     const events = await axios(url);
-    console.log(events)
+    this.setState({
+      events: events.data.events
+    })
   }
 
   render(){
